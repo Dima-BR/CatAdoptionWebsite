@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adopt Cat</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- CSS- bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">       
+        <!-- CSS- Custom -->
+        <link rel="stylesheet" href="css/custom.css">
+      
+    </head>
+
+    <body>
+        <nav id="dnav"class="navbar navbar-expand-xl navbar-dark bg-primary">
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png"></a>
+          <div class="collapse navbar-collapse" >
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item pad ">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item active pad">
+                <a class="nav-link" href="adopt.html">Adopt</a>
+              </li>
+            </ul>
+          </div>
+       </nav>
+
+        <div class="row-fluid jumbotron">
+          <h2 class="text-center">If You Want to Adopt a Cat Please Fill Form</h2>
+        <form class="text-center">
+            <div class="row ">
+                   <div class="col-md-3 mb-1 ">
+                      <input type="text" class="form-control" id="catname" placeholder=" Cat Name " name="catname">
+                   </div>
+                   <div class="col-md-3 mb-1 ">
+                      <input type="text" class="form-control" id="catbreed" placeholder=" Cat Breed " name="catbreed">
+                   </div>
+                   <div class="col-md-3 mb-1 ">
+                      <input type="number" class="form-control" id="catage" placeholder=" Cat Age " name="catage">
+                   </div>
+                   <div class="col-md-3 mb-1 ">
+                      <input type="text" class="form-control" id="catcolor" placeholder=" Cat Color " name="catcolor">
+                   </div>  
+                   <div class="my-lg-3 mx-auto text-center"> 
+                      <button type="button" id="add"  class="btn btn-primary btn-lg" onclick="addRow();"> Adopt this Cat</button>          
+                  </div> 
+            </div>
+        </form>  
+       </div>    
+         
+      <table class="table table-info text-center">
+          <thead class="thead-primary">
+            <tr>
+               <th>Cat Name </th>
+               <th>Cat Breed</th>
+               <th>Cat Age  </th>
+               <th>Cat Color</th>
+            </tr>
+          </thead>
+          <tbody id="catInfo"></tbody>
+      </table>
+
+        <script>
+
+            function addRow()
+            {
+                // get input values
+                var catname = document.getElementById("catname").value;
+                var catbreed = document.getElementById("catbreed").value;
+                var catage = document.getElementById("catage").value;
+                var catcolor = document.getElementById("catcolor").value;
+                
+                // get the html table
+                // 0 = the first table
+                var table = document.getElementsByTagName('table')[0];
+                
+                // add new empty row to the table
+                // 0 = in the top 
+                // table.rows.length = the end
+                var newRow = table.insertRow(table.rows.length);
+                
+                // add cells to the row
+                var cel1 = newRow.insertCell(0);
+                var cel2 = newRow.insertCell(1);
+                var cel3 = newRow.insertCell(2);
+                var cel4 = newRow.insertCell(3);
+
+                // add values to the cells
+                cel1.innerHTML =catname ;
+                cel2.innerHTML =catbreed;
+                cel3.innerHTML = catage;
+                cel4.innerHTML = catcolor;
+
+                    //  make input empty
+                document.getElementById("catname").value="";
+                document.getElementById("catbreed").value="";
+                document.getElementById("catage").value="";
+                document.getElementById("catcolor").value="";
+
+            }
+            
+        </script>
+
+    </body>
+
+</html>

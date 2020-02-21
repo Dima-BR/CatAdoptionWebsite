@@ -1,0 +1,17 @@
+#dnav{
+font-size: 24px;
+font-weight: 700;
+line-height: 1.9;
+
+}
+
+.left{
+    float: left;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 20px;
+    }
+.pad{
+    padding-left: 40px;
+    padding-right: 40px;
+}    
